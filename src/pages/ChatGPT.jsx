@@ -1,7 +1,7 @@
 import { useState } from "react";
 import OpenAI from "openai";
 import { SiOpenai } from "react-icons/si";
-import { GrSend } from "react-icons/gr";
+import { AiOutlineSend } from "react-icons/ai";
 import { HiOutlineDotsHorizontal } from "react-icons/hi";
 import { BiTrash } from "react-icons/bi";
 import { CiUser } from "react-icons/ci";
@@ -73,27 +73,28 @@ export default function ChatGPT() {
   return (
     <main className="grid lg:flex min-h-screen flex-col items-center lg:justify-between py-3 lg:py-9 px-3 lg:px-20">
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <Link to="/" className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
+        <Link
+          to="/"
+          className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30"
+        >
           Get started with Sampic&nbsp;
         </Link>
         <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
+          <Link
             className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="/"
-            target="_blank"
-            rel="noopener noreferrer"
+            to="/"
           >
             By{" "}
             <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
               Samson
             </p>
-          </a>
+          </Link>
         </div>
       </div>
 
       <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]"></div>
 
-      <div className="grid gap-3 z-10 max-w-5xl w-full  pt-3">
+      <div className="grid gap-3 z-10 border-gray-300 bg-gradient-to-b from-zinc-200 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:rounded-xl lg:border lg:bg-gray-200 lg:dark:bg-zinc-800/30 outline-none border rounded-md max-w-5xl w-full p-3">
         <div className="flex flex-col h-[400px] w-full overflow-y-auto">
           {messages.map((message, index) => (
             <div key={index}>
@@ -106,7 +107,7 @@ export default function ChatGPT() {
                 <p className="w-full">{message.content}</p>
               </div>
               {message.text && (
-                <div className="my-2 border-gray-300 bg-gradient-to-b from-zinc-200 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:rounded-xl lg:border lg:bg-gray-200 lg:dark:bg-zinc-800/30 outline-none border rounded-md flex gap-3 w-full p-3">
+                <div className="border-gray-300 bg-gradient-to-b from-zinc-200 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:rounded-xl lg:border lg:bg-gray-200 lg:dark:bg-zinc-800/30 outline-none border rounded-md flex gap-3 w-full p-3">
                   <div className="flex gap-3 w-full">
                     <div className="">
                       <div className="bg-green-900 p-1.5 rounded-md">
@@ -149,7 +150,7 @@ export default function ChatGPT() {
               {active ? (
                 <HiOutlineDotsHorizontal className="w-5 h-5" />
               ) : (
-                <GrSend className="w-5 h-5" />
+                <AiOutlineSend className="w-5 h-5" />
               )}
             </button>
           </div>
